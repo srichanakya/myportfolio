@@ -1,4 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+*{
+    /* font-family: 'Dosis', sans-serif; */
+    font-family: 'Ysabeau Office', sans-serif;
+}
 /* Navbar.jsx */
 #header {
     background-color: #f1f1f1; /* Grey background */
@@ -8,11 +15,12 @@
     font-size: 20px; /* Big font size */
     position: fixed; /* Fixed position - sit on top of the page */
     width: 100%; /* Full width */
-    transition: 0.5s; /* Add a transition effect (when scrolling - and font size is decreased) */
+    transition: .7s; /* Add a transition effect (when scrolling - and font size is decreased) */
+    color: black;
+    z-index: 100;
   }
-
-.navbar-custom{
-    background-color: #f1f1f1;
+.mx-auto{
+    color: black;
 }
 
 
@@ -23,12 +31,71 @@
 
 
 /* Home.jsx */
-.home{
-    padding-top: 5%;
+#myimage{
     width: 100%;
-    height: 120vh;
+    height: 50vh;
+}
+#mycontent{
+    text-align: justify;
+}
+#myname{
+    color: red;
+    text-shadow: 1px 1px 2px rgba(219, 219, 219, 0.47);
 }
 
-
+@media only screen and (max-width:500px){
+    #home{
+        padding-top: 20%;
+        height: 100vh;
+    }
+    #mycontent{
+        text-align: justify;
+    }
+   #extracontent{
+    display: none;
+   }
+   #cme{
+    display: none;
+   }
+  
+}
 
 /* Home.jsx */
+
+
+/* about.jsx */
+
+#about{
+    width:100%;
+    height: 100vh;
+    border: 1px solid red;
+    text-align: justify;
+}
+
+@media only screen and (max-width:500px){
+    #about{
+        /* position: absolute; */
+        padding-top: 20px;
+
+        font-size: 10px;
+        text-align: justify;
+    
+    }
+    .additional{
+        display: none;
+       }
+}
+/* about.jsx */
+
+
+
+
+/* contact.jsx */
+
+
+#contact{
+    width: 100%;
+    height: 100vh;
+}
+
+/* contact.jsx */
