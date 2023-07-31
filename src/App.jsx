@@ -19,7 +19,7 @@ function App(){
             <Home />
 
             <About />
-            {/* <Experience /> */}
+            <Experience />
             
 
             <Socialmedia />

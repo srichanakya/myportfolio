@@ -1,26 +1,50 @@
+import React from 'react';
+import { motion } from 'framer-motion';
+// import '../Styles/About.css'; // Import the CSS file for the About component
 
+function About() {
+  const fadeInUpVariants = {
+    hidden: { opacity: 0, y: 100 },
+    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: 'easeOut' } },
+  };
 
-function About(){
-    return (
-        <div name="about" id="about" className="w-full h-screen bg-gradient-to-b from-gray-800 to-black  text-white">
-            <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
-                <div className="pb-8">
-                    <p className="text-4xl font-bold inline border-b-4 border-gray-500 text-white">
-                       About 
-                    </p>
-                </div>
-                <p className="text-xl mt-10 text-white"> I am Sri Chanaky Yennana, born in India, and my fascination with computers began during my early years. Completing my Bachelor's in Computer Science and Engineering from GITAM University, Visakhapatnam, was a significant milestone in my journey. Currently, I am eagerly pursuing a Master's in CS at UTD, where I continue to delve deeper into the world of technology.</p>
+  const fadeInRightVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0, transition: { duration: 1, ease: 'easeOut' } },
+  };
 
-<p className="text-xl text-white mt-5">From a young age, I have harbored a genuine passion for creating applications that serve a meaningful purpose and positively impact people's lives. This passion drives me to constantly explore and innovate, seeking ways to make software that caters to the diverse needs of individuals across the globe.</p>
+  return (
+    <motion.div name="about" id="about" className="about-container">
+      <motion.div
+        className="about-content"
+        initial="hidden"
+        animate="visible"
+        variants={fadeInUpVariants}
+      >
+        <motion.div className="about-heading" variants={fadeInRightVariants}>
+          <p className="about-title">About</p>
+        </motion.div>
+        <motion.p className="about-text" variants={fadeInUpVariants}>
+          I am Sri Chanaky Yennana, born in India, and my fascination with computers began during my early years.
+          Completing my Bachelor's in Computer Science and Engineering from GITAM University, Visakhapatnam, was a
+          significant milestone in my journey. Currently, I am eagerly pursuing a Master's in CS at UTD, where I continue
+          to delve deeper into the world of technology.
+        </motion.p>
 
-<p className="text-xl text-white mt-5 additional">With the knowledge and expertise I am gaining through my studies, I am determined to contribute to the advancement of technology and the development of user-friendly applications. My goal is to bring convenience, efficiency, and joy to people's lives through my work, leaving a lasting impression on the world of software development.</p>
-                <br/>
+        <motion.p className="about-text" variants={fadeInUpVariants}>
+          From a young age, I have harbored a genuine passion for creating applications that serve a meaningful purpose and
+          positively impact people's lives. This passion drives me to constantly explore and innovate, seeking ways to make
+          software that caters to the diverse needs of individuals across the globe.
+        </motion.p>
 
-                <br/>
-                {/* <p className="text-xl  text-white">As a full-stack developer with specialized expertise in iOS development, I possess a comprehensive skill set that allows me to work on both the front-end and back-end of web applications. Additionally, my proficiency in iOS development enables me to design and build native applications specifically for Apple's iOS platform. This dual proficiency allows me to create end-to-end solutions, from conceptualizing and designing user interfaces to implementing server-side logic and database management. As a result, I can seamlessly bridge the gap between the user-facing experience and the underlying technical infrastructure, ensuring the delivery of robust and user-friendly applications for both web and iOS platforms.</p> */}
-            </div>
-        </div>
-    )
+        <motion.p className="about-text additional" variants={fadeInUpVariants}>
+          With the knowledge and expertise I am gaining through my studies, I am determined to contribute to the advancement
+          of technology and the development of user-friendly applications. My goal is to bring convenience, efficiency, and
+          joy to people's lives through my work, leaving a lasting impression on the world of software development.
+        </motion.p>
+      </motion.div>
+    </motion.div>
+  );
 }
 
 export default About;

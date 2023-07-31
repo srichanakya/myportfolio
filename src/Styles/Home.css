@@ -1,0 +1,15 @@
+.profile-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .profile {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    margin: 50px 20px;
+  }
+  
+  /* Rest of your existing styles for profile, profile-image, name, description, and buttons */
+  

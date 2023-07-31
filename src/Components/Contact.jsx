@@ -1,41 +1,112 @@
-import React from 'react'
-import Form from 'react-bootstrap/Form';
-import { useRef } from 'react';
-// import emailjs from '@emailjs/browser';git init
+import React, { useState, useEffect } from 'react';
+import emailjs from 'emailjs-com';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
-export default function Contact() {
+const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { duration: 0.6 } },
+  };
+const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
+  const [isSending, setIsSending] = useState(false); // Track sending status
 
 
+  
 
-    
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: value,
+    }));
+  };
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Prevent duplicate clicks while sending
+    if (isSending) {
+      return;
+    }
+
+    // Set "Sending" text on button
+    setIsSending(true);
+
+    // Replace these values with your own EmailJS service and template IDs
+    const serviceID = 'service_6kquwax';
+    const templateID = 'template_z2j0yk3';
+    const userID = 'aElTxKVTKqzP8vcil';
+
+    emailjs
+      .send(serviceID, templateID, {
+        to_name: 'Sri Chanakya Yennana',
+        from_name: formData.name,
+        message: formData.message,
+        reply_to: formData.email,
+      }, userID)
+      .then((response) => {
+        toast.success("Mail sent to Sri Chanakya Yennana");
+        console.log('Email sent successfully!', response);
+      })
+      .catch((error) => {
+        toast.error("Oops!!! Something went wrong. Try again later.");
+        console.error('Failed to send email:', error);
+      })
+      .finally(() => {
+        // Clear the form and reset the button text after sending attempt
+        setIsSending(false);
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        });
+      });
+  };
+
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ threshold: 0.1 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
   return (
-    <div className='contact w-full h-screen bg-gradient-to-b from-black to-gray-800  pt-20 text-white' id='contact'>
-      <div className="flex flex-col p-4 justify-center max-w-screen-lg mx-auto h-full">
-        <div className='pb-8'>
-            <p className="text-4xl font-bold inline border-b-4 border-gray-500 text-white">Contact Me</p>
-            <div className='pb-8 flex justify-center items-center'>
-                <form  className='flex flex-col w-full md:w-1/2 py-10'>
-                    <input 
-                    type='text' 
-                    name='name' placeholder='Your Name' 
-                    className='p-2 bg-transparent border-2 rounded-md text-white focus: outline-none' />
-                    <input 
-                    type='text' 
-                    name='email'  placeholder='Your Email address'
-                    className='my-4 p-2 bg-transparent border-2 rounded-md text-white focus: outline-none' />
-                    <textarea name="message" rows="10" placeholder='Enter your message to me'
-                    className="p-2 bg-transparent border-2 rounded-md text-white focus: outline-none"></textarea>
-
-                    <button className=" text-white bg-gradient-to-b from-cyan-500
-                     to-blue-500 px-6 pv-3 my-8 
-                     mx-auto flex  items-center rounded-md hover: scale-110 duration-300">
-                        Let's talk 
-                    </button>
-                </form>
-            </div>
+    <motion.div
+      className="form-container"
+      variants={containerVariants}
+      initial="hidden"
+      animate={controls}
+      ref={ref} id="contact"
+    >
+      <form className="contact-form" onSubmit={handleSubmit}>
+        <h2>Contact Us</h2>
+        <div className="form-group">
+          <label htmlFor="name">Name</label>
+          <input type="text" id="name" name="name" value={formData.name} onChange={handleChange} required='required' />
         </div>
-      </div>
-    </div>
-  )
-}
+        <div className="form-group">
+          <label htmlFor="email">Email</label>
+          <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} required='required' />
+        </div>
+        <div className="form-group">
+          <label htmlFor="message">Message</label>
+          <textarea id="message" name="message" value={formData.message} onChange={handleChange} required='required'></textarea>
+        </div>
+        <button type="submit" className={isSending ? "btn-sending" : "btn-primary"} disabled={isSending}>
+          {isSending ? 'Sending...' : 'Send Message'}
+        </button>
+      </form>
+      <ToastContainer />
+    </motion.div>
+  );
+};
+
+export default Contact;

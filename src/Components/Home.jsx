@@ -1,53 +1,67 @@
+import profileImage from '../Assets/myImage.JPG';
+import { motion, useAnimation } from 'framer-motion';
+import React, { useEffect } from 'react';
+import '../Styles/Home.css'; // Import the Profile CSS
+import Typical from 'react-typical'; 
 
-import myImage from '../Assets/myImage.JPG';
-import { MdOutlineArrowRightAlt } from 'react-icons/md'
-import {BsFillArrowRightCircleFill} from 'react-icons/bs'
-import {motion} from 'framer-motion'
-import reac from '../Assets/icon.png';
-import {FcIdea} from 'react-icons/fc'
-import Typical from 'react-typical';
+export default function Home() {
+  const nameControls = useAnimation();
+  const imageControls = useAnimation();
 
-function Home(){
-    
-    return (
-        <div name="home" id='home' className='h-screen w-full bg-gradient-to-b from-black via-black to-gray-800'>
-           <div className='max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row'>
-            <div className='flex flex-col justify-center h-full'>
-                <h3 className='text-white text-4xl sm:text-7xl font-bold'> Hello, I am <span id='myname'>Sri Chanakya Yennana</span></h3>
-                <h1 className='text-gray-500 pt-4 max-w-md text-white'>
-                <Typical
-        steps={['Full-Stack Developer 🧑‍💻', 3000, ' Data Scientist 💿', 3000,'VR Developer 🥽',3000,'iOS Developer 📱',3000]}
-        loop={Infinity}
-        wrapper="p"
-      />
-                </h1>
-                <p id="mycontent" className='text-gray-500 pt-4 max-w-md'>
-                With nearly two years of experience in software development and design, my current passion lies in crafting web applications. <span id='extracontent'>I take pleasure in creating user-friendly interfaces and implementing innovative solutions to ensure smooth and enjoyable user experiences. Keeping myself updated with the latest technologies is essential, 
-                and I find joy in merging creativity with technical expertise in my projects.</span>
-                </p>
-                <div>
-                <button className='group text-black w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-red-400 to-red-500 cursor-pointer'>
-                    Hire me 
-                    <span className='group-hover:scale-125 duration-300'>
-                    <FcIdea size={25} className="ml-1"/>
-                    </span>
-                </button>
-                <button id="cme" className='group text-black w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-stone-50 to-stone-400 cursor-pointer'>
-                    Contact me 
-                    <span className='group-hover:rotate-90 duration-300'>
-                    <MdOutlineArrowRightAlt size={25} className="ml-1"/>
-                    </span>
-                </button>
+  useEffect(() => {
+    nameControls.start({ opacity: 1, y: 0, transition: { duration: 1, ease: 'easeOut' } });
+    imageControls.start({ opacity: 1, x: 0, transition: { duration: 1, ease: 'easeOut' } });
+  }, [nameControls, imageControls]);
+
+  return (
+    <div className="profile-container">
+      <div className="profile">
+        <motion.img
+          src={profileImage}
+          alt="Profile"
+          className="profile-image"
+          style={{ opacity: 0, x: -50 }}
+          animate={imageControls}
+        />
+        <motion.h1 className="name" style={{ opacity: 0, y: 50 }} animate={nameControls}>
+        Hello, I am <span>Sri Chanakya Yennana</span>
+        </motion.h1>
+        <div className="professions bigger-profession">
+          <motion.h1 style={{ opacity: 0, y: 50 }} animate={nameControls} className="profession">
+            <Typical
+              steps={['🧑‍💻 Full-Stack Developer', 1000,'🥽 VR Developer', 1000,'📱 iOS Developer', 1000]}
+              loop={Infinity}
+              wrapper="span"
+            />
+          </motion.h1>
+          </div>
+        <motion.p
+          className="description"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1, transition: { duration: 1, delay: 0.5 } }}
+        >
+           
+                With nearly two years of experience in software development and design, my current passion lies in crafting web applications. I take pleasure in creating user-friendly interfaces and implementing innovative solutions to ensure smooth and enjoyable user experiences. Keeping myself updated with the latest technologies is essential, 
+                and I find joy in merging creativity with technical expertise in my projects.
                 
-            </div>
-            </div>
-            <div>
-                <img id="myimage" src={myImage} alt="my profile" className='rounded-2xl mx-auto w-2/3 md:w-full'/>
-            </div>
-           </div>
+        </motion.p>
+        <div className="buttons">
+          <motion.button
+            className="hire-button"
+            whileHover={{ scale: 1.1, boxShadow: '0 0 8px rgba(255, 0, 0, 0.6)' }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <a href='mailto:srichanakyayennana@gmail.com?subject=congrats'>Hire Me</a>
+          </motion.button>
+          <motion.button
+            className="contact-button"
+            whileHover={{ scale: 1.1, boxShadow: '0 0 8px rgba(71, 122, 255, 0.6)' }}
+            whileTap={{ scale: 0.9 }}
+          ><a href='#contact'>
+            Contact Me</a>
+          </motion.button>
         </div>
-    )
+      </div>
+    </div>
+  );
 }
-
-
-export default Home;
