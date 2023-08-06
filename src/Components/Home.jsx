@@ -14,7 +14,7 @@ export default function Home() {
   }, [nameControls, imageControls]);
 
   return (
-    <div className="profile-container">
+    <div className="profile-container" id='home'>
       <div className="profile">
         <motion.img
           src={profileImage}
@@ -51,7 +51,7 @@ export default function Home() {
             whileHover={{ scale: 1.1, boxShadow: '0 0 8px rgba(255, 0, 0, 0.6)' }}
             whileTap={{ scale: 0.9 }}
           >
-            <a href='mailto:srichanakyayennana@gmail.com?subject=congrats'>Hire Me</a>
+            <a href='mailto:srichanakyayennana@gmail.com?subject=Celebrating Your Success: Welcome Aboard! '>Hire Me</a>
           </motion.button>
           <motion.button
             className="contact-button"

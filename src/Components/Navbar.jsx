@@ -64,15 +64,13 @@ function Navbarcustom() {
             <Nav.Link style={textColor} className="navitem" href="#about">About</Nav.Link>
             <NavDropdown
               title="Experience"
-              id="basic-nav-dropdown"
+              id="basic-nav-dropdown" href="#experience"
               style={textColor} // Apply the dropdownStyle to the NavDropdown
             >
               <NavDropdown.Item style={textColor} className="navitem" href="#experience">Work Experience</NavDropdown.Item>
-              <NavDropdown.Item style={textColor} className="navitem" href="#academics">
-                Academics
-              </NavDropdown.Item>
               <NavDropdown.Item style={textColor} className="navitem" href="#projects">Projects</NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link style={textColor} className="navitem" href="#academics">Education</Nav.Link>
             <Nav.Link style={textColor} className="navitem" href="#skills">Skills</Nav.Link>
             <Nav.Link style={textColor} className="navitem" href="#contact">Contact</Nav.Link>
           </Nav>
