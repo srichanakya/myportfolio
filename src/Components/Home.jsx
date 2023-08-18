@@ -60,6 +60,13 @@ export default function Home() {
           ><a href='#contact'>
             Contact Me</a>
           </motion.button>
+          <motion.button
+            className="Resume-button"
+            whileHover={{ scale: 1.1, boxShadow: '0 0 8px rgba(11, 102, 35, 0.6)' }}
+            whileTap={{ scale: 0.9 }}
+          ><a href='/Sri_Chanakya_Yennana_resume.pdf' download='Sri Chanakya Yennana Resume' target='_blank' rel='noreferrer'>
+            Resume</a>
+          </motion.button>
         </div>
       </div>
     </div>

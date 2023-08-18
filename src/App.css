@@ -146,6 +146,10 @@ body{
   background-color: #2196f3;
   color: #fff;
 }
+.resume-button {
+  background-color: #0B6623;
+  color: #fff;
+}
 
 /* Mobile Responsive Styles */
 @media (max-width: 768px) {
@@ -354,7 +358,11 @@ body{
     height: 100vh;
 }
 
-
+#sendBtn{
+  width:50%;
+  margin-left: 25%;
+  padding: 2%;
+}
 
 /* ContactForm.css */
 
@@ -522,6 +530,9 @@ body{
 }
 .skillscontainer{
   padding-top: 10%;
+}
+h6{
+  text-align: center;
 }
 
 @media only screen and (max-width:768px){

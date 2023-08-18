@@ -12,6 +12,7 @@ import python from '../Assets/skillsicons/python.svg';
 import swift from '../Assets/skillsicons/swift.svg';
 import github from '../Assets/skillsicons/github.svg';
 import git from '../Assets/skillsicons/git.svg';
+import spring from '../Assets/skillsicons/spring.png';
 
 
 
@@ -30,43 +31,60 @@ export default function Skills() {
         
         <div  className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg shadow-orange-500" >
                 <img src={html} className="w-20  mx-auto"/>
+                <h6>HTML5</h6>
             </div>
             
             <div  className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg shadow-blue-500">
                 <img src={css} className="w-20  mx-auto"/>
+                <h6>CSS3</h6>
             </div>
             <div  className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg shadow-yellow-500">
                 <img src={jasc} className="w-20  mx-auto"/>
+                <h6>JavaScript</h6>
             </div>
             <div  className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg shadow-blue-500">
                 <img src={rea} className="w-20 mx-auto"/>
+                <h6>React</h6>
             </div>
             <div  className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg shadow-green-400">
                 <img src={nod} className="w-20 mx-auto"/>
+                <h6>Node.js</h6>
             </div>
             <div  className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg shadow-red-500">
                 <img src={np} className="w-20 mx-auto"/>
+                <h6>NPM</h6>
             </div>
             <div  className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg shadow-green-500">
                 <img src={mon} className="w-20 mx-auto"/>
+                <h6>MongoDB</h6>
             </div>
             <div  className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg shadow-blue-300">
                 <img src={ms} className="w-20 mx-auto"/>
+                <h6>MySql</h6>
             </div>
             <div  className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg shadow-orange-500">
                 <img src={java} className="w-20 mx-auto"/>
+                <h6>Java</h6>
+            </div>
+            <div  className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg shadow-green-500">
+                <img src={spring} className="w-20 mx-auto"/>
+                <h6>Spring Boot</h6>
             </div>
             <div  className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg  shadow-blue-500/40 ">
                 <img src={python} className="w-20 mx-auto"/>
+                <h6>Python 3</h6>
             </div>
             <div  className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg shadow-orange-500">
                 <img src={swift} className="w-20 mx-auto"/>
+                <h6>Swift</h6>
             </div>
             <div  className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg shadow-gray-500">
                 <img src={github} className="w-20 mx-auto"/>
+                <h6>GITHUB</h6>
             </div>
             <div  className="shadow-md hover:scale-105 duration-500 py-2 rounded-lg shadow-red-500">
                 <img src={git} className="w-20 mx-auto"/>
+                <h6>GIT</h6>
             </div>
             
         </div>
