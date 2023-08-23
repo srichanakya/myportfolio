@@ -364,6 +364,10 @@ body{
   padding: 2%;
 }
 
+#name ,#email, #message{
+  padding: 5px;
+}
+
 /* ContactForm.css */
 
 /* ContactForm.css */

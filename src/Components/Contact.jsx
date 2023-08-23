@@ -100,7 +100,7 @@ const Contact = () => {
           <label htmlFor="message">Message</label>
           <textarea id="message" name="message" value={formData.message} onChange={handleChange} required='required'></textarea>
         </div>
-        <button type="submit" className={isSending ? "btn-sending" : "btn-primary"} disabled={isSending}>
+        <button id="sendBtn" type="submit" className={isSending ? "btn-sending" : "btn-primary"} disabled={isSending}>
           {isSending ? 'Sending...' : 'Send Message'}
         </button>
       </form>
