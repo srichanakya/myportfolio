@@ -48,7 +48,7 @@ const Contact = () => {
       .send(serviceID, templateID, {
         to_name: 'Sri Chanakya Yennana',
         from_name: formData.name,
-        message: formData.message,
+        message: "Email : "+ formData.email+ " \n " +formData.message ,
         reply_to: formData.email,
       }, userID)
       .then((response) => {
