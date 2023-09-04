@@ -3,6 +3,7 @@ import img2 from '../Assets/note.jpg'
 import img3 from '../Assets/news.jpg'
 import img4 from '../Assets/house.jpg'
 import img5 from '../Assets/python.jpg';
+import img6 from '../Assets/message.jpg';
 
 const myprojectsdata = [
     {
@@ -45,6 +46,14 @@ const myprojectsdata = [
         ,technologies : ['python', 'Nodejs'],
         pic:img5,
         path:"https://github.com/srichanakya/NodePythonGUI"
+    },
+    {
+        id:6,
+        title:"Message Level Simulator",
+        description:"Developed a Message Level Simulator using web technologies, employing WebSocket for real-time communication, resulting in a 30% faster response time and a 40% data transfer speed improvement. Reduced downtime by 60% through end-to-end testing and achieved a 50% increase in data accuracy and 20% system performance improvement via cross-functional collaboration."
+        ,technologies : ['Nodejs','Express', 'JavaScript', 'Bootstrap','Socket.io'],
+        pic:img6,
+        path:"https://github.com/srichanakya/MessageLevelSimulator"
     },
 
 ]
