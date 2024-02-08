@@ -18,7 +18,7 @@ const academic = [
         degree: 'Bachelor of Technology in Computer Science and Engineering',
         duration: '2016 - 2020',
         gpa : '8.81/10',
-        course: 'Database Design, Machine Learning, Design and Analysis of Algorithms, Virtual Reality, BigData Management and Analysis, Web Programming Languages',
+        course: 'Operating Systems, OOPS in Java, Data Structures in C, Compiler Design, Database Management Systems',
         pic:GITAM
     }
 ]
