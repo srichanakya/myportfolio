@@ -31,7 +31,7 @@ export default function Academics(props) {
         <Typography variant="body2" color="text.secondary">
           {props.degree}
         </Typography>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography variant="body2" color="text.secondary">
          Course Work : {props.course}
         </Typography>
         <Typography variant="body2" color="text.secondary">
