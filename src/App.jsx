@@ -24,7 +24,7 @@ return <Projects key={data.id} title = {data.title} description = {data.descript
 }
 
 function mapacademics(data){
-    return <Academics key={data.id} name = {data.name} degree = {data.degree} pic = {data.pic} duration={data.duration} gpa = {data.gpa}  />
+    return <Academics key={data.id} name = {data.name} degree = {data.degree} pic = {data.pic} duration={data.duration} gpa = {data.gpa} course = {data.course} />
     }
 
 function App(){
