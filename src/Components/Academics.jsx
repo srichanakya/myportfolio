@@ -32,7 +32,7 @@ export default function Academics(props) {
           {props.degree}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-         Course Work : {props.course}
+         <i>Course Work : {props.course}</i>
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {props.duration}
