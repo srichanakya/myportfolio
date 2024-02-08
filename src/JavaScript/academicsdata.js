@@ -9,6 +9,7 @@ const academic = [
         degree: 'Master of Science in Computer Science',
         duration: 'Aug 2022 - May 2024',
         gpa : '3.33/4.00',
+        course: 'Database Design, Machine Learning, Design and Analysis of Algorithms, Virtual Reality, BigData Management and Analysis, Web Programming Languages',
         pic:UTD
     },
     {
