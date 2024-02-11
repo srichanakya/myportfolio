@@ -24,7 +24,7 @@ export default function Home() {
           animate={imageControls}
         />
         <motion.h1 className="name" style={{ opacity: 0, y: 50 }} animate={nameControls}>
-        Hello, I am <span>Sri Chanakya Yennana</span>
+        Hello, I am <span>SRI CHANAKYA YENNANA</span>
         </motion.h1>
         <div className="professions bigger-profession">
           <motion.h1 style={{ opacity: 0, y: 50 }} animate={nameControls} className="profession">
