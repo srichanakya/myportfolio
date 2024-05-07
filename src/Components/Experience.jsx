@@ -50,7 +50,7 @@ const Experience = () => {
       <CardContainer>
       <div className="experience-card">
         <h4 className="job-title">Intern</h4>
-       <p>DRDL | May 2019 - Dec 2019</p>
+       <p>DRDL | Apr 2019 - Dec 2019</p>
         <ul className='bullet-list'>
         <li>Developed a prototype for a Microservices-based Health Monitoring System using web technologies, laying the groundwork for reliable system health monitoring.</li>
 <li>Implemented WebSocket protocol for real-time communication, boosting system response time by 30% and data transfer speed by 40%.</li>
